@@ -4,78 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Brand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Общие стили */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             color: #FFFFFF;
             display: flex;
             flex-direction: column;
             height: 100vh;
+            background: radial-gradient(circle, #0d1117, #161b22, #0b0d10);
             overflow: hidden;
-            background: radial-gradient(circle, #1a1a3f, #000000);
         }
 
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            background-image: 
-                radial-gradient(1px 1px at 10% 20%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 30% 40%, #FFFFFF, transparent),
-                radial-gradient(2px 2px at 50% 60%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 70% 80%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 90% 10%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 15% 70%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 25% 90%, #FFFFFF, transparent),
-                radial-gradient(2px 2px at 85% 50%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 60% 30%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 80% 70%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 40% 15%, #FFFFFF, transparent),
-                radial-gradient(2px 2px at 35% 85%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 55% 45%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 75% 65%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 95% 25%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 5% 5%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 95% 95%, #FFFFFF, transparent),
-                radial-gradient(1px 1px at 50% 10%, #FFFFFF, transparent);
-            background-repeat: repeat;
-            animation: twinkle 4s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.8; }
-            50% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-
+        /* Шапка */
         header {
-            z-index: 1;
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            padding: 10px 20px;
-            background-color: rgba(44, 44, 44, 0.9);
-            border-bottom: 1px solid #333;
+            padding: 15px 20px;
+            position: absolute;
+            top: 0;
+            z-index: 100;
             box-sizing: border-box;
         }
 
         .user-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px; /* Уменьшен отступ между балансом и полосками */
         }
 
         .balance {
-            font-size: 0.9rem;
-            color: #B0B0B0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #9aa5b1;
+            white-space: nowrap; /* Запрещаем перенос текста */
         }
 
         .menu-icon {
-            width: 24px;
-            height: 24px;
+            width: 20px; /* Уменьшена ширина полосок */
+            height: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -88,104 +59,99 @@
             background-color: #FFFFFF;
         }
 
+        /* Заголовок бренда */
         .brand-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-top: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
             text-align: center;
-            z-index: 1;
+            margin: 60px 0 30px;
+            color: #FFFFFF;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
+        /* Основной контейнер */
         main {
-            z-index: 1;
             flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             padding: 20px;
         }
 
         .content-container {
             width: 100%;
             max-width: 600px;
-            background-color: rgba(44, 44, 44, 0.8);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            border-radius: 16px;
+            background: none; /* Полностью прозрачный */
             text-align: center;
-        }
-
-        .text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
         }
 
         .deposit-button {
-            padding: 12px 25px;
+            display: inline-block;
+            padding: 15px 30px;
             font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
             color: #FFFFFF;
-            background-color: #007BFF;
+            background: linear-gradient(90deg, #0078ff, #00d2ff);
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
             text-decoration: none;
-            display: inline-block;
-            text-align: center;
         }
 
-        .deposit-button:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .deposit-button:hover:before {
-            left: 100%;
+        .deposit-button:hover {
+            box-shadow: 0 4px 15px rgba(0, 216, 255, 0.5);
+            transform: scale(1.05);
         }
 
         .deposit-button:active {
-            transform: scale(0.95);
+            transform: scale(0.98);
         }
 
+        /* Адаптивные стили */
         @media (max-width: 768px) {
             header {
-                flex-wrap: wrap;
+                padding: 10px;
+                justify-content: flex-end;
             }
 
             .user-section {
-                justify-content: flex-end;
-                margin-left: auto;
+                width: auto; /* Гарантирует, что секция пользователя остается на экране */
+                padding-right: 5px; /* Сдвигает элементы ближе внутрь */
+            }
+
+            .balance {
+                font-size: 0.9rem; /* Немного уменьшен текст */
+            }
+
+            .menu-icon {
+                width: 18px; /* Дополнительно уменьшена ширина полосок */
+                height: 18px;
             }
 
             .content-container {
-                max-width: 80%; /* Устанавливаем 80% ширины */
-                border-radius: 8px; /* Сохраняем округлые края */
-                box-shadow: none; /* Убираем тень */
+                width: 90%;
+                padding: 20px;
             }
 
-            .text {
-                font-size: 1rem;
+            .brand-title {
+                font-size: 2rem;
+                margin: 40px 0 20px;
             }
 
             .deposit-button {
-                padding: 10px 20px;
+                padding: 12px 25px;
                 font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
     <header>
         <div class="user-section">
             <span class="balance">Balance 0.0</span>
@@ -199,7 +165,6 @@
     <div class="brand-title">Your Brand</div>
     <main>
         <div class="content-container">
-            <div class="text">Start depositing your funds</div>
             <a href="https://uragan.cash/external/orders/2ad3a1af959491f4b8db6272" class="deposit-button">Deposit</a>
         </div>
     </main>
