@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Brand</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Подключение Font Awesome -->
     <style>
         /* Общие стили */
         body {
@@ -45,23 +46,14 @@
         }
 
         .menu-icon {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            font-size: 20px; /* Размер иконки пользователя */
+            color: rgb(62, 107, 137); /* Цвет иконки */
             cursor: pointer;
-        }
-
-        .menu-icon div {
-            width: 100%;
-            height: 3px;
-            background-color: #FFFFFF;
         }
 
         /* Логотип */
         .logo {
-            width: 200px; /* Размер логотипа */
+            width: 300px; /* Увеличен размер логотипа */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -87,8 +79,8 @@
 
         .deposit-button {
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 1rem;
+            padding: 20px 40px; /* Увеличены размеры кнопки */
+            font-size: 1.25rem; /* Увеличен размер шрифта */
             font-weight: 600;
             text-transform: uppercase;
             color: #FFFFFF;
@@ -126,8 +118,7 @@
             }
 
             .menu-icon {
-                width: 18px;
-                height: 18px;
+                font-size: 18px; /* Меньше иконка на мобильной версии */
             }
 
             .content-container {
@@ -136,8 +127,8 @@
             }
 
             .deposit-button {
-                padding: 12px 25px;
-                font-size: 0.9rem;
+                padding: 15px 35px;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -146,11 +137,7 @@
     <header>
         <div class="user-section">
             <span class="balance">Balance 0.0</span>
-            <div class="menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <i class="fas fa-user menu-icon"></i> <!-- Иконка пользователя -->
         </div>
     </header>
 
