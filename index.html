@@ -34,18 +34,18 @@
         .user-section {
             display: flex;
             align-items: center;
-            gap: 10px; /* Уменьшен отступ между балансом и полосками */
+            gap: 10px;
         }
 
         .balance {
             font-size: 1rem;
             font-weight: 500;
             color: #9aa5b1;
-            white-space: nowrap; /* Запрещаем перенос текста */
+            white-space: nowrap;
         }
 
         .menu-icon {
-            width: 20px; /* Уменьшена ширина полосок */
+            width: 20px;
             height: 20px;
             display: flex;
             flex-direction: column;
@@ -59,16 +59,12 @@
             background-color: #FFFFFF;
         }
 
-        /* Заголовок бренда */
-        .brand-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin: 60px 0 30px;
-            color: #FFFFFF;
-            background: linear-gradient(to right, #00d2ff, #3a7bd5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Логотип */
+        .logo {
+            width: 200px; /* Размер логотипа */
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         /* Основной контейнер */
@@ -85,7 +81,7 @@
             max-width: 600px;
             padding: 40px;
             border-radius: 16px;
-            background: none; /* Полностью прозрачный */
+            background: none;
             text-align: center;
         }
 
@@ -121,27 +117,22 @@
             }
 
             .user-section {
-                width: auto; /* Гарантирует, что секция пользователя остается на экране */
-                padding-right: 5px; /* Сдвигает элементы ближе внутрь */
+                width: auto;
+                padding-right: 5px;
             }
 
             .balance {
-                font-size: 0.9rem; /* Немного уменьшен текст */
+                font-size: 0.9rem;
             }
 
             .menu-icon {
-                width: 18px; /* Дополнительно уменьшена ширина полосок */
+                width: 18px;
                 height: 18px;
             }
 
             .content-container {
                 width: 90%;
                 padding: 20px;
-            }
-
-            .brand-title {
-                font-size: 2rem;
-                margin: 40px 0 20px;
             }
 
             .deposit-button {
@@ -162,7 +153,12 @@
             </div>
         </div>
     </header>
-    <div class="brand-title">Your Brand</div>
+
+    <!-- Логотип, заменяющий текст Your Brand -->
+    <div style="text-align: center; margin-top: 100px;">
+        <img src="https://andreandremyandre.github.io/yourbrand/logo_transparent.png" alt="Logo" class="logo">
+    </div>
+
     <main>
         <div class="content-container">
             <a href="https://uragan.cash/external/orders/2ad3a1af959491f4b8db6272" class="deposit-button">Deposit</a>
